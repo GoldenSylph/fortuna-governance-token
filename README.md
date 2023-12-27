@@ -2,34 +2,37 @@
 
 This is a repository containing a base for Fortuna Protocol governance token. The instructions below would contain a number of steps that would help a contributor to deploy, setup and manipulate the deployed smart-contracts.
 
-# Set up local environment
+# Setting up a local environment
 
-1) Fork and clone
+1) Fork and clone.
 2) Open the terminal an go to the directory in which the repo was cloned and make `yarn` command.
-3) Create a `.env` file with the following contains per line (as in `.env.example` file in the root of the repository):
-   1) MAINNET_DEPLOY_MNEMONIC="xxx" <- Here goes a mnemonic of an admin.
+3) Create a `.env` file in the root of the cloned repo with the following contains per line (as in `.env.example` file in the root of the repository):
+   1) MAINNET_DEPLOY_MNEMONIC="xxx" <- Here goes A mnemonic of an admin.
    2) ALCHEMY_MAINNET_API_KEY="xxx" <- Here goes an API key for the Ethereum Mainnet node in the Alchemy (https://www.alchemy.com).
    3) ETHERSCAN_API_KEY="xxx" <- Here goes an API key for the Etherscan (https://etherscan.io).
    4) ADMIN_ADDRESS="0xB8A71e585B7f4357305a9174c0E0f6db1Db71AD1"
    5) REPORT_GAS="true"
    6) DOCGEN="false"
+4) After points 2 and 3, the repo is considered set up and you can continue.
 
 # Fortuna Governance Token
 
-Deploy instructions
+To deploy the token you should perform a comman: `npx hardhat deploy --tags token --network mainnet`.
 
-1) Pauser Role
-2) Minter Role
-3) Burner Role
-4) Tax Marker Role
-5) Untaxable Role
-6) Banned Role
+The token has roles that are to regulate certain aspects of the functionality.
 
-How to grant, revoke and renounce roles
+1) Pauser role (strict name: `PAUSER_ROLE`) - the owner of the role is able to call `unpause()` function and trigger the free trading of the token once and for all.
+2) Minter role (strict name: `MINTER_ROLE`) - the owner of the role is able to mint tokens up to a `CAP()` value.
+3) Burner role (strict name: `BURNER_ROLE`) - the owner of the role is able to burn tokens from anyone at any rate.
+4) Tax Marker role (strict name: `TAX_MARKER_ROLE`) - the owner of the role is basically considered an entity to which the token sendings are going to be taxed (up to 10%). (Ex. DEX pairs address, etc.)
+5) Untaxable role (strict name: `UNTAXABLE_ROLE`) - the owner of the role is freed from any kind of fees and taxes charged in the token.
+6) Banned role (strict name: `BANNED_ROLE`) - this is special role and the only role that cannot be renounced and could only be revoked by the admin. The owner of the role has their funds frozen in their address since the admin grants the role.
 
-How to mint tokens
+## How to grant, revoke and renounce roles?
 
-How to enable trading
+## How to mint tokens?
+
+## How to enable trading? 
 
 # Fortuna Airdrop
 
