@@ -4,9 +4,15 @@ This is a repository containing a base for Fortuna Protocol governance token. Th
 
 # Set up local environment
 
-1) Fork or Clone
-2) Make `yarn`
-3) Create a `.env` file with the following contains:
+1) Fork and clone
+2) Open the terminal an go to the directory in which the repo was cloned and make `yarn` command.
+3) Create a `.env` file with the following contains per line (as in `.env.example` file in the root of the repository):
+   1) MAINNET_DEPLOY_MNEMONIC="xxx" <- Here goes a mnemonic of an admin.
+   2) ALCHEMY_MAINNET_API_KEY="xxx" <- Here goes an API key for the Ethereum Mainnet node in the Alchemy (https://www.alchemy.com).
+   3) ETHERSCAN_API_KEY="xxx" <- Here goes an API key for the Etherscan (https://etherscan.io).
+   4) ADMIN_ADDRESS="0xB8A71e585B7f4357305a9174c0E0f6db1Db71AD1"
+   5) REPORT_GAS="true"
+   6) DOCGEN="false"
 
 # Fortuna Governance Token
 
@@ -22,6 +28,8 @@ Deploy instructions
 How to grant, revoke and renounce roles
 
 How to mint tokens
+
+How to enable trading
 
 # Fortuna Airdrop
 
