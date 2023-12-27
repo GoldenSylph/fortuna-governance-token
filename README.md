@@ -30,6 +30,13 @@ The token has roles that are to regulate certain aspects of the functionality.
 
 ## How to grant, revoke and renounce roles?
 
+1) To grant role to someone you should perform a command: `npx hardhat grant --address <address of the role receiver> --role <STRICT_NAME_OF_THE_ROLE> --network mainnet`. 
+   1) Example: `npx hardhat grant --address 0xB8A71e585B7f4357305a9174c0E0f6db1Db71AD1 --role UNTAXABLE_ROLE --network mainnet`
+2) To revoke role from someone you should perform a command: `npx hardhat revoke --address <address from whom the role would be revoked> --role <STRICT_NAME_OF_THE_ROLE> --network mainnet`.
+   1) Example: `npx hardhat revoke --address 0xB8A71e585B7f4357305a9174c0E0f6db1Db71AD1 --role UNTAXABLE_ROLE --network mainnet`
+3) To renounce the role you should perform a command: `npx hardhat renounce --role <STRICT_NAME_OF_THE_ROLE> --network mainnet`.
+   1) Example: `npx hardhat renounce --role UNTAXABLE_ROLE --network mainnet`
+
 ## How to mint tokens?
 
 ## How to enable trading?
@@ -46,7 +53,7 @@ Other functions (such as burn of the tokens) could be easily interacted with at 
 
 To deploy the airdrop smart-contract you should perform a command: `npx hardhat deploy --tags airdrop --network mainnet`. 
 
-**CAUTION**: the contract should only be deployed once the Fortuna Governance token has been deployed too. Also, the CSV table of the holders **must** also be populated.
+**CAUTION**: the contract should only be deployed once the Fortuna Governance token has been deployed too. Also, the CSV table of the holders in the directory `./resources/csv/holders.csv` **MUST** be populated.
 
 ## How to update the Merkle Tree in the airdrop smart-contract?
 
