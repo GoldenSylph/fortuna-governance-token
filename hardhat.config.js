@@ -15,6 +15,8 @@ require("./tasks/manual/getMerkleTreeInfo")(task);
 require("./tasks/manual/updateMerkleTree")(task);
 require("./tasks/manual/generateJsonOfMerkleTreeBody")(task);
 require("./tasks/manual/grantRole")(task);
+require("./tasks/manual/revokeRole")(task);
+require("./tasks/manual/renounceRole")(task);
 require("./tasks/manual/mint")(task);
 
 const mainnetUrl = `https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_MAINNET_API_KEY}`;
