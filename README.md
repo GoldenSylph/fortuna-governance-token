@@ -34,6 +34,10 @@ The token has roles that are to regulate certain aspects of the functionality.
 
 ## How to enable trading?
 
+## How to manage sell tax?
+
+## How to add multiple DEX pairs?
+
 ## Other interactions
 
 Other functions (such as burn of the tokens) could be easily interacted with at this link in the block explorer: <link>
@@ -42,7 +46,11 @@ Other functions (such as burn of the tokens) could be easily interacted with at 
 
 To deploy the airdrop smart-contract you should perform a command: `npx hardhat deploy --tags airdrop --network mainnet`. 
 
-**CAUTION**: the contract should only be deployed once the Fortuna Governance token has been deployed too.
+**CAUTION**: the contract should only be deployed once the Fortuna Governance token has been deployed too. Also, the CSV table of the holders **must** also be populated.
+
+## How to update the Merkle Tree in the airdrop smart-contract?
+
+## How to perform `claim(...)` function?
 
 1) A CSV table of addresses
 2) How to update the MerkleTree inside the airdrop contract
