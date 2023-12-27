@@ -24,7 +24,7 @@ contract FortunaGovernanceToken is
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
-    bytes32 public constant TAXABLE_ROLE = keccak256("TAXABLE_ROLE");
+    bytes32 public constant TAX_MARKER_ROLE = keccak256("TAX_MARKER_ROLE");
     bytes32 public constant UNTAXABLE_ROLE = keccak256("UNTAXABLE_ROLE");
     bytes32 public constant BANNED_ROLE = keccak256("BANNED_ROLE");
 
@@ -50,7 +50,7 @@ contract FortunaGovernanceToken is
         address[] memory dexPairs
     ) external onlyRole(DEFAULT_ADMIN_ROLE) {
         for (uint256 i; i < dexPairs.length; i++) {
-            _grantRole(TAXABLE_ROLE, dexPairs[i]);
+            _grantRole(TAX_MARKER_ROLE, dexPairs[i]);
         }
     }
 
@@ -111,7 +111,7 @@ contract FortunaGovernanceToken is
                 super._update(from, to, value);
             }
         } else {
-            if (hasRole(TAXABLE_ROLE, to) && !hasRole(UNTAXABLE_ROLE, from)) {
+            if (hasRole(TAX_MARKER_ROLE, to) && !hasRole(UNTAXABLE_ROLE, from)) {
                 uint256 tax = (value * currentTaxForDexTrading) / MAX_BPS;
                 super._update(from, taxReceiver, tax);
                 super._update(from, to, value - tax);
