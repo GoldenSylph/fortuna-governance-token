@@ -1,6 +1,6 @@
 {
   "name": "fortuna-governance-token",
-  "author": "Fortuna Protocol",
+  "author": "Oleg Bedrin <simplavero@gmail.com>",
   "scripts": {
     "prettier-sol": "prettier --write 'contracts/**/*.sol'",
     "solhint": "solhint 'contracts/**/*.sol'"
