@@ -24,10 +24,10 @@ contract FortunaAirdrop is Ownable {
     mapping(address user => bool isClaimed) public claimed;
 
     constructor(
-        address admin,
+        address _admin,
         address _token,
         bytes32 _merkleRoot
-    ) Ownable(admin) {
+    ) Ownable(_admin) {
         token = IMintable(_token);
         merkleRoot = _merkleRoot;
     }
