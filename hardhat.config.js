@@ -18,6 +18,9 @@ require("./tasks/manual/grantRole")(task);
 require("./tasks/manual/revokeRole")(task);
 require("./tasks/manual/renounceRole")(task);
 require("./tasks/manual/mint")(task);
+require("./tasks/manual/tax")(task);
+require("./tasks/manual/unpause")(task);
+require("./tasks/manual/setUpMultipleTaxMarkers")(task);
 
 const mainnetUrl = `https://eth-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_MAINNET_API_KEY}`;
 const mainnetChainId = 1;

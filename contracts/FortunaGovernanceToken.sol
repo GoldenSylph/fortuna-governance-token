@@ -51,7 +51,7 @@ contract FortunaGovernanceToken is
         _pause();
     }
 
-    function setDexPairs(
+    function setTaxMarkers(
         address[] memory dexPairs
     ) external onlyRole(DEFAULT_ADMIN_ROLE) {
         for (uint256 i; i < dexPairs.length; i++) {

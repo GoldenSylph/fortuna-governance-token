@@ -39,15 +39,33 @@ The token has roles that are to regulate certain aspects of the functionality.
 
 ## How to mint tokens?
 
+To mint the token tou should perform a command: `npx hardhat mint --address <receiver of the tokens> --amount <amount of the token in WEI>`.
+
+Example: `npx hardhat mint --address 0xB8A71e585B7f4357305a9174c0E0f6db1Db71AD1 --amount 3300000000000000000000000`.
+
 ## How to enable trading?
+
+To enable the trading and free transfering of the tokens you should perform command: `npx hardhat unpause --network mainnet`.
 
 ## How to manage sell tax?
 
-## How to add multiple DEX pairs?
+**CAUTION:** the sell tax has range from 0 to 10000 (base points).
+
+To set up the sell tax you should perform command: `npx hardhat tax --amount <amount in BPS> --network mainned`.
+
+Example: `npx hardhat tax --amount 9800 --network mainnet` - this would set the tax to 2% = ((10000 - 9800) / 2).
+
+## How to mark multiple DEX pairs as tax markers?
+
+To mark multiple entities as tax triggers (e.g. DEX pairs) you should perform a command: `npx hardhat markers --addresses <A1>,<A2>,...<An> --network mainnets`.
+
+Example: `npx hardhat markers --addresses 0xB8A71e585B7f4357305a9174c0E0f6db1Db71AD1,0xB8A71e585B7f4357305a9174c0E0f6db1Db71AD1 --network mainnet`
+
+*WARNING:* the example marks some random addresses!
 
 ## Other interactions
 
-Other functions (such as burn of the tokens) could be easily interacted with at this link in the block explorer: <link>
+Other functions (such as burn of the tokens) could be easily interacted with at this link in the block explorer: here goes link
 
 # Fortuna Airdrop
 
