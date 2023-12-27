@@ -17,7 +17,7 @@ This is a repository containing a base for Fortuna Protocol governance token. Th
 
 # Fortuna Governance Token
 
-To deploy the token you should perform a comman: `npx hardhat deploy --tags token --network mainnet`.
+To deploy the token you should perform a command: `npx hardhat deploy --tags token --network mainnet`.
 
 The token has roles that are to regulate certain aspects of the functionality.
 
@@ -32,11 +32,17 @@ The token has roles that are to regulate certain aspects of the functionality.
 
 ## How to mint tokens?
 
-## How to enable trading? 
+## How to enable trading?
+
+## Other interactions
+
+Other functions (such as burn of the tokens) could be easily interacted with at this link in the block explorer: <link>
 
 # Fortuna Airdrop
 
-Deploy instructions
+To deploy the airdrop smart-contract you should perform a command: `npx hardhat deploy --tags airdrop --network mainnet`. 
+
+**CAUTION**: the contract should only be deployed once the Fortuna Governance token has been deployed too.
 
 1) A CSV table of addresses
 2) How to update the MerkleTree inside the airdrop contract
