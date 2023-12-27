@@ -36,7 +36,10 @@ contract FortunaGovernanceToken is
 
     constructor(
         address admin
-    ) ERC20("$FORTUNA", "$FTNA") ERC20Permit("$FORTUNA") {
+    ) 
+        ERC20("$FORTUNA", "$FTNA") 
+        ERC20Permit("$FORTUNA")
+    {
         _grantRole(DEFAULT_ADMIN_ROLE, admin);
         _grantRole(PAUSER_ROLE, admin);
         _grantRole(MINTER_ROLE, admin);

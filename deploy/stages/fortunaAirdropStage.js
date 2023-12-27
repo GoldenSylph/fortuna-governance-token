@@ -3,7 +3,7 @@ const {
   skipIfAlreadyDeployed, 
   getMerkleTree, 
   parseCSV
-} = require('../../helpers');
+} = require('../helpers');
 
 module.exports = async ({
   getNamedAccounts,
@@ -13,7 +13,7 @@ module.exports = async ({
   const { deploy, get } = deployments;
   const { deployer } = await getNamedAccounts();
 
-  const tokenAddress = '';
+  const tokenAddress = (await get("FortunaGovernanceToken")).address;
 
   const addressKey = "HolderAddress";
   const balanceKey = "Balance";
@@ -39,9 +39,9 @@ module.exports = async ({
     skipIfAlreadyDeployed,
     log: true,
     args: [
+      hre.config.adminAddress,
       tokenAddress,
-      merkleTree.root,
-      deployer
+      merkleTree.root
     ]
   });
 }

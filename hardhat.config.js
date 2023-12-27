@@ -40,6 +40,7 @@ const etherscan = {
 };
 
 module.exports = {
+  adminAddress: process.env.ADMIN_ADDRESS,
   solidity: {
     compilers,
   },

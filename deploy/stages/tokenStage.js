@@ -1,7 +1,7 @@
 const hre = require('hardhat');
 const { 
   skipIfAlreadyDeployed, 
-} = require('../../helpers');
+} = require('../helpers');
 
 module.exports = async ({
   getNamedAccounts,
@@ -15,7 +15,7 @@ module.exports = async ({
     skipIfAlreadyDeployed,
     log: true,
     args: [
-      deployer
+        hre.config.adminAddress
     ]
   });
 }
