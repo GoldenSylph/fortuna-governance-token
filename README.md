@@ -53,7 +53,7 @@ To enable the trading and free transfering of the tokens you should perform comm
 
 To set up the sell tax you should perform command: `npx hardhat tax --amount <amount in BPS> --network mainned`.
 
-Example: `npx hardhat tax --amount 9800 --network mainnet` - this would set the tax to 2% = ((10000 - 9800) / 2).
+Example: `npx hardhat tax --amount 9800 --network mainnet` - this would set the tax to 2% = (10000 - 9800) / 2.
 
 ## How to mark multiple DEX pairs as tax markers?
 
