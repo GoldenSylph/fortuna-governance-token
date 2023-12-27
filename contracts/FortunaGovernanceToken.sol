@@ -17,6 +17,7 @@ contract FortunaGovernanceToken is
     AccessControlEnumerable,
     ERC20Permit
 {
+    error CapHasBeenReached();
     error CannotUnbanMyself();
     error Banned(address who);
     error MaxTaxHasBeenReached(uint256 passedValue);
@@ -28,6 +29,7 @@ contract FortunaGovernanceToken is
     bytes32 public constant UNTAXABLE_ROLE = keccak256("UNTAXABLE_ROLE");
     bytes32 public constant BANNED_ROLE = keccak256("BANNED_ROLE");
 
+    uint256 public constant CAP = 1_000_000_000 ether;
     uint256 public constant MAX_BPS = 10000;
     uint256 public constant MAX_TAX_FOR_DEX_TRADING = 1000;
 
@@ -76,6 +78,9 @@ contract FortunaGovernanceToken is
         address to,
         uint256 amount
     ) public override onlyRole(MINTER_ROLE) {
+        if (totalSupply() + amount > CAP) {
+            revert CapHasBeenReached();
+        }
         _mint(to, amount);
     }
 
