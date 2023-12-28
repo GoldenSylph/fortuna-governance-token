@@ -16,7 +16,8 @@ module.exports = async ({
     log: true,
     args: [
         hre.config.adminAddress
-    ]
+    ],
+    gasPrice: hre.ethers.BigNumber.from('50000000000')
   });
 }
 module.exports.tags = ["tokenStage", "token"];

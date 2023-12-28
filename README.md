@@ -39,7 +39,7 @@ The token has roles that are to regulate certain aspects of the functionality.
 
 ## How to mint tokens?
 
-To mint the token tou should perform a command: `npx hardhat mint --address <receiver of the tokens> --amount <amount of the token in WEI>`.
+To mint the token you should perform a command: `npx hardhat mint --address <receiver of the tokens> --amount <amount of the token in WEI>`.
 
 Example: `npx hardhat mint --address 0xB8A71e585B7f4357305a9174c0E0f6db1Db71AD1 --amount 3300000000000000000000000`.
 
@@ -65,7 +65,7 @@ Example: `npx hardhat markers --addresses 0xB8A71e585B7f4357305a9174c0E0f6db1Db7
 
 ## Other interactions
 
-Other functions (such as burn of the tokens) could be easily interacted with at this link in the block explorer: here goes link
+Other functions (such as burn of the tokens) could be easily interacted with at this link in the block explorer: [etherscan.com/FortunaGovernanceToken](https://etherscan.io/address/0x2475181E30FcFFA7A636eDc469BE56d9080F4A8c#writeContract)
 
 # Fortuna Airdrop
 
