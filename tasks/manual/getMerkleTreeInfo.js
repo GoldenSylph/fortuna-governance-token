@@ -4,7 +4,7 @@ const { getMerkleTree, parseCSV } = require('../../deploy/helpers');
 module.exports = (task) =>
   task(
     "getMerkleTreeInfo",
-    "Print Merkle Tree proof of an address.",
+    "Print Merkle Tree proof of an address and its descriptive info.",
   )
     .addOptionalParam("path", "Define a path to csv with addresses and balances to populate the Merkle Tree.", './resources/csv/holders.csv', types.string)
     .addOptionalParam("address", "Define an address for which a proof would be generated and printed.", '0x57eb63d0aab5822EFCd7A9B56775F772D3e03CfD', types.string)
